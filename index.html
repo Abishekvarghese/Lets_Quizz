@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let's Quizz Leaderboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #3fd0ac, #6e44ff);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: clamp(32px, 8vw, 60px); /* responsive font size */
+      font-weight: bold;
+      margin: 20px 0;
+      color: #fffacd;
+      text-shadow: 0 0 20px #fff, 0 0 40px #ffeb3b, 0 0 60px #ffeb3b;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-top: 6rem;
+    }
+    h2 {
+      font-size: clamp(22px, 6vw, 50px); /* responsive font size */
+      font-weight: bold;
+      margin: 20px 0;
+      color: #fffacd;
+      text-shadow: 0 0 20px #fff, 0 0 40px #ffeb3b, 0 0 60px #ffeb3b;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 20px #fff, 0 0 40px #ffeb3b; }
+      to { text-shadow: 0 0 30px #fff, 0 0 60px #ffeb3b, 0 0 100px #ffeb3b; }
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 2;
+      position: relative;
+    }
+
+    th, td {
+      padding: 12px;
+      font-size: clamp(14px, 3vw, 18px);
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.2);
+      font-size: clamp(16px, 4vw, 20px);
+    }
+
+    tr {
+      transition: all 0.3s ease-in-out;
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.03);
+      text-shadow: 0 0 10px #fff;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Floating glowing orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      animation: float 12s infinite ease-in-out alternate;
+      z-index: 1;
+    }
+
+    .orb:nth-child(1) {
+      width: 60px; height: 60px;
+      top: 20%; left: 10%;
+      animation-duration: 15s;
+    }
+
+    .orb:nth-child(2) {
+      width: 80px; height: 80px;
+      top: 65%; left: 80%;
+      animation-duration: 20s;
+    }
+
+    .orb:nth-child(3) {
+      width: 50px; height: 50px;
+      top: 75%; left: 25%;
+      animation-duration: 18s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px) translateX(0px); }
+      to { transform: translateY(-40px) translateX(20px); }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+      table {
+        width: 100%;
+      }
+      th, td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Orbs -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <h1>LET'S QUIIZZ</h1>
+  <h2>Leaderboard</h2>
+
+  <table id="leaderboard">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Henry Raju</td><td>12</td></tr>
+      <tr><td>2</td><td>Anagha Sajeev </td><td>12</td></tr>
+      <tr><td>3</td><td>Amayakrishna mk</td><td>12</td></tr>
+      <tr><td>4</td><td>Navneet Madhu </td><td>11</td></tr>
+      <tr><td>5</td><td>KRISHNANATH K S</td><td>10</td></tr>
+      <tr><td>6</td><td>Asha Rani C </td><td>10</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
